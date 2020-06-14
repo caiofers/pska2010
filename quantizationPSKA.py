@@ -1,19 +1,32 @@
 import numpy as np
 
-def quantization(data, bits, verbose=False):
-    
+def quantization(data, nQuantBits, verbose=False):
+    verbose = True
     if verbose == True: print("\nQUANTIZAÇÃO - START")
     
+    # Definindo limite superior e inferior dos dados a serem quantizados
+    vMax = max(data)
+    vMin = min(data)
+
+    # Criação de uma lista vazia para armazenar os coeficientes quantizados
     quantized_coeffs = []
 
+    # Definindo o número de níveis de acordo com a quantidade de bits
+    nLevels = 2^nQuantBits
+
+    # Definindo distância entre os níveis
+    distLevels = (vMax-vMin)/nLevels
+
+    # Quantização de cada um dos valores da lista de dados 
     for key in data:
-        sig = key * (2 ** bits - 1)
-        sig = np.round(sig)
-        sig = np.array(sig).astype(int)
-        # print(sig)
-        quantized_coeffs.append(sig)
+        level = 0
+        limiar = vMin+(level+1)*distLevels
+        while(key > limiar and limiar < vMax):
+            level = level + 1
+            limiar = vMin+(level+1)*distLevels
+        quantized_coeffs.append(level)
     
-    quantized_coeffs = np.array(quantized_coeffs)
+    #quantized_coeffs = np.array(quantized_coeffs)
 
     if verbose == True:
         print("\nDados:")
@@ -23,31 +36,3 @@ def quantization(data, bits, verbose=False):
         print("\nQUANTIZAÇÃO - END\n")
     
     return quantized_coeffs
-
-'''
-def quantization(data, qBlocks, bits):
-    f_s = 125
-    qtDados = len(data)
-    #print(data)
-    qCoef = qtDados/qBlocks
-    quantized_coeffs = []
-
-    for key in data:
-        sig = key * (2 ** bits - 1)
-        sig = np.round(sig)
-        sig = np.array(sig).astype(int)
-        print(sig)
-        quantized_coeffs.append(sig%16)
-    quantized_coeffs = np.array(quantized_coeffs)
-
-    print(quantized_coeffs)
-
-
-    return  quantized_coeffs
-    #quant = np.binary_repr(data/bits*8)
-
-
-    #for i in range(len(data)):
-    #    auxData.append(data[i])
-    #return np.array(auxData)
-'''

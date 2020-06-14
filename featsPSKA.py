@@ -10,25 +10,33 @@ def calcFeats(division, frequency, verbose=False, plot=False, save=False):
     featVectorInt = []
     index = 0
 
+    verbose = True
+
     if verbose: print("\nCALCÚLO DAS FEATS - START")
 
     for data in division:
         # Aplicando Fast Fourier Transform para 128 pontos
         X = fftPSKA.fftAply(data, 128, frequency)
         
+        # Definindo tamanho mínimo dos picos a serem detectados
+        vMaxHeight = 10
+
         #Encontrando os picos da FFT
-        peaks = peaksPSKA.find_peaks_extended(X,10, verbose=verbose, plot=plot, save=save, index=index)
+        peaks = peaksPSKA.find_peaks_extended(X, vMaxHeight, verbose=verbose, plot=plot, save=save, index=index)
+
+
+        # Definindo numero de bits da quantização
+        nQuantBits = 4
 
         #Aplicando a quantização para discretizar os pontos
-        pt1 = quantizationPSKA.quantization(peaks, 1, verbose=verbose)
-        pt2 = quantizationPSKA.quantization(X[peaks], 1, verbose=verbose)
+        pt1 = quantizationPSKA.quantization(peaks, nQuantBits, verbose=verbose)
+        pt2 = quantizationPSKA.quantization(X[peaks], nQuantBits, verbose=verbose)
 
         if plot:
             plt.plot(pt1, pt2)
             if save: plt.savefig('graficos/quantpeaks' + str(index) + '.png')
             plt.show()
-
-        index = index + 1
+            index = index + 1
 
         # Construindo vetor de caracteristicas com cada ponto (Cada ponto resulta em 16 bits, sendo os 8 primeiros o indices e os outros 8 o valor)
         for k in range(len(pt1)):
@@ -38,7 +46,6 @@ def calcFeats(division, frequency, verbose=False, plot=False, save=False):
     if verbose:
         print("Vetor de características (binário): ")
         print(featVectorBin)
-
         print("Vetor de características (inteiro): ")
         print(featVectorInt)
         print("\nCALCÚLO DAS FEATS - END")

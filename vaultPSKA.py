@@ -2,12 +2,21 @@ import coeffPSKA
 import numpy as np
 
 def generateVault(feats, size):
-    coeff = coeffPSKA.generateCoeff(size) #Colocar para retornar bin e int
-    key = coeff #coeff é a chave
-    truePoly = np.polynomial.polynomial.polyval(feats, coeff)
-    print(feats, truePoly)
-    chaffFeat, chaffPoly = coeffPSKA.generateChaffPoints(feats, coeff)
+    coeff = coeffPSKA.generateCoeff(feats, size) #Colocar para retornar bin e int
+    
+    key = []
 
+    for i in coeff:
+        key.append(str(i))
+
+    key = [''.join(key)] #a chave são os coeffs concatenados
+
+    truePoly = []
+    for feat in feats:
+        truePoly.append(int(np.polynomial.polynomial.polyval(feat, coeff)))
+
+    chaffFeat, chaffPoly = coeffPSKA.generateChaffPoints(feats, coeff, truePoly)
+    
     vault = []
     i = 0
     for i in range(len(truePoly)):
