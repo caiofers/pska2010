@@ -1,7 +1,6 @@
 import numpy as np
 
 def quantization(data, nQuantBits, verbose=False):
-    verbose = True
     if verbose == True: print("\nQUANTIZAÇÃO - START")
     
     # Definindo limite superior e inferior dos dados a serem quantizados

@@ -3,7 +3,8 @@ import numpy as np
 
 def generateVault(feats, size):
     coeff = coeffPSKA.generateCoeff(feats, size) #Colocar para retornar bin e int
-    
+    print("coeff")
+    print(coeff)
     key = []
 
     for i in coeff:
@@ -13,7 +14,7 @@ def generateVault(feats, size):
 
     truePoly = []
     for feat in feats:
-        truePoly.append(int(np.polynomial.polynomial.polyval(feat, coeff)))
+        truePoly.append(np.polynomial.polynomial.polyval(feat, coeff))
 
     chaffFeat, chaffPoly = coeffPSKA.generateChaffPoints(feats, coeff, truePoly)
     

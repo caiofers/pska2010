@@ -10,8 +10,6 @@ def calcFeats(division, frequency, verbose=False, plot=False, save=False):
     featVectorInt = []
     index = 0
 
-    verbose = True
-
     if verbose: print("\nCALCÚLO DAS FEATS - START")
 
     for data in division:
