@@ -16,18 +16,15 @@ import unlockVaultPSKA
 
 def ___main___():
     # Abrindo o arquivo com os dados ECG
-    data = pd.read_csv("p000020-2183-04-28-17-47.csv", header=None)
+    data = pd.read_csv("p000020-2183-04-28-17-471.csv", header=None)
     
     # Extraindo as linhas do arquivo, pegando a segunda coluna (II - ECG)
-    x = data[1:10000][1]
-    x = np.array(x).astype(int)
+    data = data[1:10000][1]
+    data = np.array(data).astype(int)
 
     #Definindo máx e min dos dados para filtar
-    vMin = -10
-    vMax = 10
-
-    # Aplicando filtro nos dados
-    data = filterPSKA.filterPSKA(x, vMin, vMax)
+    vMin = -15
+    vMax = 15
 
      # Definindo frequencia e quantidade de tempo para coleta das amostras
     frequency = 125
@@ -42,11 +39,14 @@ def ___main___():
 
 def sender(data, frequency, seconds, vMin, vMax, order):
 
-    # Pegando 625 amostras dos dados filtrados (125hz durante 5 segundos) 
-    data1 = np.array(data[100:725])
-    
-    # Dividindo as amostras em 5 janelas de 125 amostras (1 janela para cada segundo) 
-    division = featsPSKA.divideSamples(data1, frequency, seconds)
+    # Pegando 625 amostras dos dados (125hz durante 5 segundos) 
+    data = data[0:frequency*seconds]
+
+    # Aplicando filtro nos dados
+    data = np.array(filterPSKA.filterPSKA(data, vMin, vMax))
+
+    # Dividindo as amostras em 5 janelas (1 janela para cada segundo) 
+    division = featsPSKA.divideSamples(data, frequency, seconds)
 
     # Cálculo das características
     featVectorBin1, featVectorInt1 = featsPSKA.calcFeats(division, frequency)
@@ -61,11 +61,15 @@ def sender(data, frequency, seconds, vMin, vMax, order):
 
 
 def receiver(vault, key, data, frequency, seconds, vMin, vMax, order):
-    # Pegando mais 625 amostras dos dados filtrados (Simulando a parte do receptor)
-    data2 = np.array(data[110:740])
 
-    # Dividindo as amostras em 5 janelas de 125 amostras (1 janela para cada segundo) 
-    division = featsPSKA.divideSamples(data2, frequency, seconds)
+    # Pegando 625 amostras dos dados (125hz durante 5 segundos) 
+    data = data[0:frequency*seconds]
+
+    # Aplicando filtro nos dados
+    data = np.array(filterPSKA.filterPSKA(data, vMin, vMax))
+
+    # Dividindo as amostras em 5 janelas (1 janela para cada segundo) 
+    division = featsPSKA.divideSamples(data, frequency, seconds)
 
     # Cálculo das características
     featVectorBin2, featVectorInt2 = featsPSKA.calcFeats(division, frequency)

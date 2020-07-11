@@ -1,7 +1,7 @@
 import numpy as np
 import plotPSKA
 
-def filterPSKA(data, vMin, vMax, verbose=False, plot=False):
+def filterPSKA(data, vMin, vMax, verbose=True, plot=True):
     # Criação de uma lista vazia para adicionar os dados filtrados
     auxData = []
     for i in range(len(data)):

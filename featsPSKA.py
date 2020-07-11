@@ -56,7 +56,7 @@ def divideSamples(data, frequency, sec):
     division = []
     #Dividindo as amostras em janelas (sec é a quantidade de segundos/janelas)
     for i in range(sec):
-        for j in range(frequency): #(frequency é a quantidade de amostras que tem em cada segundo)
+        for j in range(int(len(data)/sec)): #(frequency é a quantidade de amostras que tem em cada segundo)
             auxData.append(data[(i + 1) * j])
         np.array(auxData)
         division.append(auxData.copy())
