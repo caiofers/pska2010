@@ -1,7 +1,7 @@
 import coeffPSKA
 import numpy as np
 from scipy.interpolate import lagrange
-
+import ctypes
 
 
 def unlock():
@@ -9,8 +9,6 @@ def unlock():
 
 
 def intersection(feats, vault):
-    print("feats")
-    
     intersectionArray = []
 
     for i in vault:
@@ -22,14 +20,20 @@ def intersection(feats, vault):
 def interpolateVault(intersectionArray, order):
     b = []
     c = []
-    count = 0
     for i in intersectionArray:
         if(i[0] not in b):
             b.append(i[0])
             c.append(i[1])
-    print(b)
-    print(c)
     poly = lagrange(b, c)
-    return poly
+    key = []
+    tamKey = 128
+    bitsEachCoeff = tamKey/order
+    for i in range(order):
+        key.append(bin(ctypes.c_uint.from_buffer(ctypes.c_float(poly[i])).value).replace('0b','')[0:int(bitsEachCoeff)])
+
+    key = [''.join(key)] #a chave são os coeffs concatenados
+    key = key[0].rjust(tamKey, '0')
+
+    return key
     
 
