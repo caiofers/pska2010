@@ -32,6 +32,3 @@ def generateVault(feats, size):
         vault.append((chaffFeat[i],chaffPoly[i]))
     
     return vault, key
-
-1111101111110110101001101
-1111101111110110101001101
