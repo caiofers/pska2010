@@ -1,0 +1,22 @@
+105 12 500 5000
+105.dat 16 63.3179(-9973)/mV 0 0 -20104 -26484 0 i
+105.dat 16 24.2808(-11910)/mV 0 0 -10939 -23527 0 ii
+105.dat 16 23.7528(-10463)/mV 0 0 -5712 -24937 0 iii
+105.dat 16 47.9751(13769)/mV 0 0 16648 -2674 0 avr
+105.dat 16 45.9243(8565)/mV 0 0 299 -9710 0 avl
+105.dat 16 24.0139(-11178)/mV 0 0 -8296 16552 0 avf
+105.dat 16 32.4426(13301)/mV 0 0 6164 32415 0 v1
+105.dat 16 22.7549(12288)/mV 0 0 5917 29370 0 v2
+105.dat 16 28.493(4274)/mV 0 0 -3134 22539 0 v3
+105.dat 16 30.4102(-7527)/mV 0 0 -6919 20964 0 v4
+105.dat 16 30.3539(-14585)/mV 0 0 -17620 -27196 0 v5
+105.dat 16 30.3539(-13371)/mV 0 0 -9729 -1874 0 v6
+#<age>: 58
+#<sex>: F
+#<diagnoses>:
+#Electric axis of the heart: normal. 
+#Ventricular extrasystole, localisation: IVS, middle part. 
+#Ventricular extrasystole, type: single PVC. 
+#Ventricular extrasystole, type: intercalary PVC. 
+#Left atrial hypertrophy. 
+#Left ventricular hypertrophy. 

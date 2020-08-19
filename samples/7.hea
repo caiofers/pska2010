@@ -1,0 +1,26 @@
+7 12 500 5000
+7.dat 16 136.2453(-13693)/mV 0 0 -15737 14624 0 i
+7.dat 16 93.0881(-9030)/mV 0 0 19827 10105 0 ii
+7.dat 16 70.1649(1052)/mV 0 0 23856 20079 0 iii
+7.dat 16 128.7505(13068)/mV 0 0 -5858 28206 0 avr
+7.dat 16 101.6031(-6249)/mV 0 0 -23522 24430 0 avl
+7.dat 16 86.0026(-3096)/mV 0 0 24167 -29844 0 avf
+7.dat 16 51.2385(19701)/mV 0 0 13194 15054 0 v1
+7.dat 16 41.9821(23153)/mV 0 0 11398 -23489 0 v2
+7.dat 16 33.5212(21705)/mV 0 0 17347 19525 0 v3
+7.dat 16 55.3497(19262)/mV 0 0 15664 -1355 0 v4
+7.dat 16 76.5584(-15235)/mV 0 0 -24575 -30057 0 v5
+7.dat 16 75.1537(-12325)/mV 0 0 -23748 28498 0 v6
+#<age>: 50
+#<sex>: M
+#<diagnoses>:
+#Electric axis of the heart: horizontal. 
+#Atrial extrasystole: SA-nodal extrasystole. 
+#Atrial extrasystole, type: single PAC. 
+#Left atrial hypertrophy. 
+#Right atrial overload. 
+#Left ventricular hypertrophy. 
+#STEMI: anterior wall. 
+#STEMI: lateral wall. 
+#STEMI: septal. 
+#STEMI: apical. 

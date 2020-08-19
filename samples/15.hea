@@ -1,0 +1,24 @@
+15 12 500 5000
+15.dat 16 57.285(-18331)/mV 0 0 -30876 -29854 0 i
+15.dat 16 60.0678(-6397)/mV 0 0 -9821 29980 0 ii
+15.dat 16 60.5675(21562)/mV 0 0 31374 -12649 0 iii
+15.dat 16 68.8382(14318)/mV 0 0 23818 -8685 0 avr
+15.dat 16 64.3121(-18876)/mV 0 0 -31160 15168 0 avl
+15.dat 16 67.5608(8715)/mV 0 0 12228 31084 0 avf
+15.dat 16 48.7604(11459)/mV 0 0 15457 6442 0 v1
+15.dat 16 72.2536(-6033)/mV 0 0 -11235 -5819 0 v2
+15.dat 16 46.1507(-9922)/mV 0 0 -19383 27888 0 v3
+15.dat 16 6.5325(712)/mV 0 0 -7238 17133 0 v4
+15.dat 16 36.3674(-17238)/mV 0 0 -32403 -7006 0 v5
+15.dat 16 45.4466(-19042)/mV 0 0 -28813 32397 0 v6
+#<age>: 71
+#<sex>: M
+#<diagnoses>:
+#Electric axis of the heart: left axis deviation. 
+#I degree AV block. 
+#Left atrial hypertrophy. 
+#Left ventricular hypertrophy. 
+#Ischemia: anterior wall. 
+#Ischemia: lateral wall. 
+#Ischemia: septal. 
+#Ischemia: apical. 

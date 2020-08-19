@@ -1,0 +1,23 @@
+4 12 500 5000
+4.dat 16 54.1156(-18480)/mV 0 0 -23892 -28194 0 i
+4.dat 16 86.5707(-13981)/mV 0 0 15453 -17043 0 ii
+4.dat 16 49.7601(6046)/mV 0 0 27940 -32163 0 iii
+4.dat 16 69.717(19033)/mV 0 0 10667 4759 0 avr
+4.dat 16 53.323(-12984)/mV 0 0 -27381 -32377 0 avl
+4.dat 16 80.9062(-5906)/mV 0 0 25647 -12276 0 avf
+4.dat 16 74.0497(14255)/mV 0 0 13737 -26705 0 v1
+4.dat 16 28.1021(4468)/mV 0 0 -5564 -6363 0 v2
+4.dat 16 26.5105(3818)/mV 0 0 -7316 26699 0 v3
+4.dat 16 26.0366(-3736)/mV 0 0 -14020 -18147 0 v4
+4.dat 16 32.3785(-17258)/mV 0 0 -22600 21996 0 v5
+4.dat 16 48.116(-14483)/mV 0 0 -28196 -5946 0 v6
+#<age>: 56
+#<sex>: M
+#<diagnoses>:
+#Electric axis of the heart: left axis deviation. 
+#Incomplete right bundle branch block. 
+#Left atrial hypertrophy. 
+#Left ventricular hypertrophy. 
+#Ischemia: inferior wall. 
+#Scar formation: inferior wall. 
+#Undefined ischemia/scar/supp.NSTEMI: inferior wall. 

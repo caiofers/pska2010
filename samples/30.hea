@@ -1,0 +1,19 @@
+30 12 500 5000
+30.dat 16 70.1649(-8981)/mV 0 0 -11296 28853 0 i
+30.dat 16 62.2947(-22675)/mV 0 0 -10091 10354 0 ii
+30.dat 16 118.0793(-18007)/mV 0 0 9742 10454 0 iii
+30.dat 16 68.0519(17523)/mV 0 0 11807 -3305 0 avr
+30.dat 16 107.4328(2149)/mV 0 0 -12247 -26404 0 avl
+30.dat 16 90.2672(-21845)/mV 0 0 -2167 22933 0 avf
+30.dat 16 53.6285(22846)/mV 0 0 23490 -8731 0 v1
+30.dat 16 31.2513(21204)/mV 0 0 15110 -3643 0 v2
+30.dat 16 33.2998(17682)/mV 0 0 13619 21559 0 v3
+30.dat 16 33.0313(3799)/mV 0 0 -2477 -17236 0 v4
+30.dat 16 32.046(-15302)/mV 0 0 -21455 -568 0 v5
+30.dat 16 40.9076(-22131)/mV 0 0 -29085 27699 0 v6
+#<age>: 30
+#<sex>: M
+#<diagnoses>:
+#Electric axis of the heart: normal. 
+#Non-specific repolarization abnormalities: anterior wall. 
+#Non-specific repolarization abnormalities: septal. 

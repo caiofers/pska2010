@@ -1,0 +1,23 @@
+147 12 500 5000
+147.dat 16 96.9438(-23170)/mV 0 0 -25109 2418 0 i
+147.dat 16 52.3435(-21932)/mV 0 0 -26486 14254 0 ii
+147.dat 16 93.7539(-18048)/mV 0 0 -24330 -31165 0 iii
+147.dat 16 69.7913(22787)/mV 0 0 26486 -17776 0 avr
+147.dat 16 218.4467(-218)/mV 0 0 4806 -548 0 avl
+147.dat 16 68.9106(-20363)/mV 0 0 -25669 -32037 0 avf
+147.dat 16 28.9461(16210)/mV 0 0 24083 21998 0 v1
+147.dat 16 26.425(8324)/mV 0 0 14851 -16621 0 v2
+147.dat 16 26.9244(2019)/mV 0 0 2019 -19542 0 v3
+147.dat 16 27.5933(-18005)/mV 0 0 -23441 16115 0 v4
+147.dat 16 35.3474(-22622)/mV 0 0 -22693 5164 0 v5
+147.dat 16 46.511(-23372)/mV 0 0 -29651 -14457 0 v6
+#<age>: 63
+#<sex>: F
+#<diagnoses>:
+#Electric axis of the heart: normal. 
+#Left atrial hypertrophy. 
+#Left ventricular hypertrophy. 
+#Left ventricular overload. 
+#Non-specific repolarization abnormalities: lateral wall. 
+#Non-specific repolarization abnormalities: posterior wall. 
+#Non-specific repolarization abnormalities: apical. 

@@ -1,0 +1,20 @@
+43 12 500 5000
+43.dat 16 57.486(-20120)/mV 0 0 -16671 30025 0 i
+43.dat 16 46.6434(-16675)/mV 0 0 -13876 29873 0 ii
+43.dat 16 97.0874(12379)/mV 0 0 12379 31776 0 iii
+43.dat 16 54.25(20398)/mV 0 0 17143 21624 0 avr
+43.dat 16 81.1064(-17519)/mV 0 0 -15086 31782 0 avl
+43.dat 16 72.6541(-11552)/mV 0 0 -9372 -12823 0 avf
+43.dat 16 62.712(18657)/mV 0 0 9877 -5450 0 v1
+43.dat 16 47.835(18416)/mV 0 0 11719 9135 0 v2
+43.dat 16 37.0249(8701)/mV 0 0 -1666 8109 0 v3
+43.dat 16 31.5827(-5922)/mV 0 0 -14765 28464 0 v4
+43.dat 16 32.1245(-14777)/mV 0 0 -21844 -7121 0 v5
+43.dat 16 35.8109(-18443)/mV 0 0 -26321 -22780 0 v6
+#<age>: 69
+#<sex>: F
+#<diagnoses>:
+#Electric axis of the heart: horizontal. 
+#Incomplete right bundle branch block. 
+#Left atrial hypertrophy. 
+#Left ventricular hypertrophy. 

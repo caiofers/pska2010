@@ -1,0 +1,20 @@
+71 12 500 5000
+71.dat 16 53.9374(-13350)/mV 0 0 -19822 30484 0 i
+71.dat 16 42.009(-19324)/mV 0 0 -26045 -18389 0 ii
+71.dat 16 79.9195(-16783)/mV 0 0 -19980 -510 0 iii
+71.dat 16 50.8016(17527)/mV 0 0 24639 6367 0 avr
+71.dat 16 97.0874(1214)/mV 0 0 -2669 25054 0 avl
+71.dat 16 59.0396(-20369)/mV 0 0 -26273 23672 0 avf
+71.dat 16 43.1145(16384)/mV 0 0 12073 -20228 0 v1
+71.dat 16 43.4(13671)/mV 0 0 11935 -29329 0 v2
+71.dat 16 30.3398(14563)/mV 0 0 4247 -13430 0 v3
+71.dat 16 24.4074(-10678)/mV 0 0 -15071 -10768 0 v4
+71.dat 16 25.9028(-18002)/mV 0 0 -21628 27516 0 v5
+71.dat 16 28.493(-13962)/mV 0 0 -27639 -24341 0 v6
+#<age>: 32
+#<sex>: M
+#<diagnoses>:
+#Electric axis of the heart: normal. 
+#Right atrial overload. 
+#Left atrial overload. 
+#Non-specific repolarization abnormalities: inferior wall. 

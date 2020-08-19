@@ -1,0 +1,24 @@
+108 12 500 5000
+108.dat 16 64.5655(-3067)/mV 0 0 -484 -31540 0 i
+108.dat 16 98.5474(2710)/mV 0 0 6652 31122 0 ii
+108.dat 16 56.9861(8833)/mV 0 0 8833 5101 0 iii
+108.dat 16 91.0194(-1820)/mV 0 0 -5461 8379 0 avr
+108.dat 16 66.8714(-7356)/mV 0 0 -6019 -27546 0 avl
+108.dat 16 87.9651(10776)/mV 0 0 12535 -18072 0 avf
+108.dat 16 74.896(-13669)/mV 0 0 -15167 6271 0 v1
+108.dat 16 25.4501(-10371)/mV 0 0 -20042 1077 0 v2
+108.dat 16 25.5992(-7168)/mV 0 0 -12288 -23142 0 v3
+108.dat 16 30.6234(-5818)/mV 0 0 -3981 -18671 0 v4
+108.dat 16 42.28(-2960)/mV 0 0 8033 490 0 v5
+108.dat 16 72.8156(-728)/mV 0 0 12379 -2600 0 v6
+#<age>: 55
+#<sex>: M
+#<diagnoses>:
+#Electric axis of the heart: left axis deviation. 
+#Left anterior hemiblock. 
+#Complete right bundle branch block. 
+#Atrial extrasystole: left atrial. 
+#Atrial extrasystole, type: quadrigemini. 
+#Left atrial hypertrophy. 
+#Non-specific repolarization abnormalities: septal. 
+#Non-specific repolarization abnormalities: apical. 

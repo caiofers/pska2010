@@ -1,0 +1,23 @@
+69 12 500 5000
+69.dat 16 179.5452(-5297)/mV 0 0 1885 -16972 0 i
+69.dat 16 91.5279(-15651)/mV 0 0 -16292 13935 0 ii
+69.dat 16 132.6599(-15521)/mV 0 0 -21756 12024 0 iii
+69.dat 16 122.4935(12433)/mV 0 0 10473 18683 0 avr
+69.dat 16 275.3529(6608)/mV 0 0 18448 11731 0 avl
+69.dat 16 117.025(-17203)/mV 0 0 -20363 -26803 0 avf
+69.dat 16 73.4686(21232)/mV 0 0 -4482 -17570 0 v1
+69.dat 16 45.9888(20120)/mV 0 0 -17453 11787 0 v2
+69.dat 16 27.0914(11988)/mV 0 0 -18273 -13598 0 v3
+69.dat 16 25.4303(-4794)/mV 0 0 -21375 6853 0 v4
+69.dat 16 53.107(-10090)/mV 0 0 -15135 -4041 0 v5
+69.dat 16 86.2289(-16815)/mV 0 0 -10607 21869 0 v6
+#<age>: 72
+#<sex>: F
+#<diagnoses>:
+#Electric axis of the heart: normal. 
+#Left atrial hypertrophy. 
+#Left ventricular hypertrophy. 
+#STEMI: anterior wall. 
+#STEMI: lateral wall. 
+#STEMI: septal. 
+#Undefined ischemia/scar/supp.NSTEMI: posterior wall. 

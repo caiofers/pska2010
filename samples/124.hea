@@ -1,0 +1,21 @@
+124 12 500 5000
+124.dat 16 81.9175(-18841)/mV 0 0 25394 191 0 i
+124.dat 16 75.24(-23813)/mV 0 0 -2746 32115 0 ii
+124.dat 16 70.6947(-3782)/mV 0 0 -22163 26933 0 iii
+124.dat 16 105.0224(19114)/mV 0 0 -23945 14190 0 avr
+124.dat 16 99.8994(-18681)/mV 0 0 21279 12873 0 avl
+124.dat 16 85.7775(-21616)/mV 0 0 -20758 -11672 0 avf
+124.dat 16 63.9356(1439)/mV 0 0 -11348 8969 0 v1
+124.dat 16 58.6172(-5803)/mV 0 0 10610 -27388 0 v2
+124.dat 16 47.0115(7428)/mV 0 0 -12317 29930 0 v3
+124.dat 16 46.81(-7022)/mV 0 0 30426 -4233 0 v4
+124.dat 16 42.8327(-18632)/mV 0 0 32767 -24256 0 v5
+124.dat 16 39.0083(-24965)/mV 0 0 32767 12996 0 v6
+#<age>: 66
+#<sex>: M
+#<diagnoses>:
+#Electric axis of the heart: left axis deviation. 
+#Left atrial overload. 
+#Left ventricular hypertrophy. 
+#Non-specific repolarization abnormalities: lateral wall. 
+#Non-specific repolarization abnormalities: apical. 

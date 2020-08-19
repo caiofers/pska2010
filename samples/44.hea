@@ -1,0 +1,21 @@
+44 12 500 5000
+44.dat 16 54.6117(-7919)/mV 0 0 -12288 -20672 0 i
+44.dat 16 45.6365(-22453)/mV 0 0 -26104 38 0 ii
+44.dat 16 42.9731(-16867)/mV 0 0 -16867 -8250 0 iii
+44.dat 16 66.8033(20542)/mV 0 0 25886 17271 0 avr
+44.dat 16 54.8402(8089)/mV 0 0 5895 -3412 0 avl
+44.dat 16 47.3512(-22160)/mV 0 0 -24054 2408 0 avf
+44.dat 16 35.7718(15704)/mV 0 0 19281 -12243 0 v1
+44.dat 16 26.8033(16149)/mV 0 0 30087 22828 0 v2
+44.dat 16 12.6905(14061)/mV 0 0 26752 -27542 0 v3
+44.dat 16 13.328(14947)/mV 0 0 28275 -23386 0 v4
+44.dat 16 22.0653(11584)/mV 0 0 15114 2609 0 v5
+44.dat 16 40.7043(-17910)/mV 0 0 -22795 30828 0 v6
+#<age>: 76
+#<sex>: F
+#<diagnoses>:
+#Electric axis of the heart: left axis deviation. 
+#Complete left bundle branch block. 
+#Scar formation: anterior wall. 
+#Scar formation: septal. 
+#Scar formation: apical. 

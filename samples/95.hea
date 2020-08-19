@@ -1,0 +1,22 @@
+95 12 500 5000
+95.dat 16 23.7442(-2849)/mV 0 0 12822 3663 0 i
+95.dat 16 27.7099(2009)/mV 0 0 19189 25457 0 ii
+95.dat 16 16.4658(4034)/mV 0 0 3375 10968 0 iii
+95.dat 16 44.2797(-1328)/mV 0 0 -29667 -23634 0 avr
+95.dat 16 19.621(-3336)/mV 0 0 3531 -8349 0 avl
+95.dat 16 21.4936(2311)/mV 0 0 8544 -23230 0 avf
+95.dat 16 33.4357(12037)/mV 0 0 8025 -1067 0 v1
+95.dat 16 27.7686(19438)/mV 0 0 26102 31837 0 v2
+95.dat 16 18.4084(11229)/mV 0 0 18961 -5701 0 v3
+95.dat 16 18.6707(2054)/mV 0 0 11016 20648 0 v4
+95.dat 16 22.7944(3932)/mV 0 0 19432 -24531 0 v5
+95.dat 16 28.8696(-3609)/mV 0 0 11403 3308 0 v6
+#<age>: 67
+#<sex>: F
+#<diagnoses>:
+#Left ventricular hypertrophy. 
+#Ischemia: lateral wall. 
+#Ischemia: septal. 
+#Ischemia: inferior wall. 
+#Ischemia: apical. 
+#UNIpolar ventricular pacing. 

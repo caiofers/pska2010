@@ -1,0 +1,21 @@
+8 12 500 5000
+8.dat 16 42.8327(-12207)/mV 0 0 -13620 -7904 0 i
+8.dat 16 58.0461(-1886)/mV 0 0 6647 7823 0 ii
+8.dat 16 46.2811(1111)/mV 0 0 9442 -28353 0 iii
+8.dat 16 65.8633(18079)/mV 0 0 14325 -1949 0 avr
+8.dat 16 49.0524(-6622)/mV 0 0 -11822 -22398 0 avl
+8.dat 16 58.9335(2770)/mV 0 0 12376 14260 0 avf
+8.dat 16 36.8375(13280)/mV 0 0 15011 -23853 0 v1
+8.dat 16 16.3999(14498)/mV 0 0 17811 -12846 0 v2
+8.dat 16 16.1255(13384)/mV 0 0 16609 -20566 0 v3
+8.dat 16 21.8083(9759)/mV 0 0 13946 2214 0 v4
+8.dat 16 23.667(1479)/mV 0 0 5029 20169 0 v5
+8.dat 16 32.8327(-8668)/mV 0 0 -15070 27544 0 v6
+#<age>: 57
+#<sex>: F
+#<diagnoses>:
+#Undefined ischemia/scar/supp.NSTEMI: anterior wall. 
+#Undefined ischemia/scar/supp.NSTEMI: lateral wall. 
+#Undefined ischemia/scar/supp.NSTEMI: septal. 
+#Undefined ischemia/scar/supp.NSTEMI: apical. 
+#UNIpolar ventricular pacing. 

@@ -1,0 +1,26 @@
+55 12 500 5000
+55.dat 16 36.6726(-18905)/mV 0 0 -28440 -8507 0 i
+55.dat 16 41.1129(-617)/mV 0 0 -3700 2350 0 ii
+55.dat 16 25.2345(19267)/mV 0 0 23935 -7737 0 iii
+55.dat 16 74.5552(15470)/mV 0 0 27921 -10264 0 avr
+55.dat 16 31.7356(-21406)/mV 0 0 -28483 21900 0 avl
+55.dat 16 31.8281(11538)/mV 0 0 13289 -13805 0 avf
+55.dat 16 30.4526(14282)/mV 0 0 32462 -8641 0 v1
+55.dat 16 26.9465(15252)/mV 0 0 32147 -12517 0 v2
+55.dat 16 35.8109(14862)/mV 0 0 31049 3696 0 v3
+55.dat 16 39.9841(14894)/mV 0 0 25370 -5110 0 v4
+55.dat 16 53.4099(5795)/mV 0 0 11403 12712 0 v5
+55.dat 16 69.717(-14989)/mV 0 0 -11364 30975 0 v6
+#<age>: 54
+#<sex>: F
+#<diagnoses>:
+#Electric axis of the heart: left axis deviation. 
+#Left anterior hemiblock. 
+#Right atrial overload. 
+#Left ventricular hypertrophy. 
+#STEMI: anterior wall. 
+#STEMI: lateral wall. 
+#STEMI: septal. 
+#Ischemia: posterior wall. 
+#Scar formation: anterior wall. 
+#Scar formation: septal. 

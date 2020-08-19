@@ -1,0 +1,21 @@
+75 12 500 5000
+75.dat 16 77.555(-5623)/mV 0 0 -8725 -1733 0 i
+75.dat 16 39.4783(-20529)/mV 0 0 -24477 24446 0 ii
+75.dat 16 46.1507(-17076)/mV 0 0 -19845 27906 0 iii
+75.dat 16 63.4405(18620)/mV 0 0 23061 -29468 0 avr
+75.dat 16 79.1473(10210)/mV 0 0 11001 -30625 0 avl
+75.dat 16 42.5545(-18937)/mV 0 0 -22341 2114 0 avf
+75.dat 16 48.7242(5481)/mV 0 0 8404 21100 0 v1
+75.dat 16 56.3491(14566)/mV 0 0 8931 -27482 0 v2
+75.dat 16 31.5067(0)/mV 0 0 -9452 -18226 0 v3
+75.dat 16 23.874(-17846)/mV 0 0 -17846 3109 0 v4
+75.dat 16 30.4102(-22732)/mV 0 0 -28814 28105 0 v5
+75.dat 16 39.0083(-21260)/mV 0 0 -25941 27438 0 v6
+#<age>: 68
+#<sex>: F
+#<diagnoses>:
+#Electric axis of the heart: normal. 
+#Left atrial hypertrophy. 
+#Left ventricular hypertrophy. 
+#Undefined ischemia/scar/supp.NSTEMI: anterior wall. 
+#Undefined ischemia/scar/supp.NSTEMI: lateral wall. 

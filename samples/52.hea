@@ -1,0 +1,20 @@
+52 12 500 5000
+52.dat 16 93.0881(-7633)/mV 0 0 -744 13566 0 i
+52.dat 16 56.6413(-15378)/mV 0 0 -12433 5292 0 ii
+52.dat 16 59.3068(-18830)/mV 0 0 -20135 15741 0 iii
+52.dat 16 94.5657(13192)/mV 0 0 7234 21584 0 avr
+52.dat 16 86.8(9939)/mV 0 0 14105 -5569 0 avl
+52.dat 16 59.3605(-17333)/mV 0 0 -16443 23834 0 avf
+52.dat 16 84.451(13005)/mV 0 0 16130 -19175 0 v1
+52.dat 16 41.6353(17903)/mV 0 0 18403 21563 0 v2
+52.dat 16 32.3785(14247)/mV 0 0 17226 11260 0 v3
+52.dat 16 34.0613(10389)/mV 0 0 12160 -9435 0 v4
+52.dat 16 41.5825(-10562)/mV 0 0 -7651 -7327 0 v5
+52.dat 16 45.1336(-12231)/mV 0 0 -10877 -7691 0 v6
+#<age>: 69
+#<sex>: F
+#<diagnoses>:
+#Electric axis of the heart: vertical. 
+#Left ventricular hypertrophy. 
+#Undefined ischemia/scar/supp.NSTEMI: lateral wall. 
+#Undefined ischemia/scar/supp.NSTEMI: apical. 

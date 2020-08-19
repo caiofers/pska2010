@@ -1,0 +1,26 @@
+64 12 500 5000
+64.dat 16 82.7449(-19114)/mV 0 0 -18038 -28482 0 i
+64.dat 16 96.8006(-18247)/mV 0 0 -25701 -23126 0 ii
+64.dat 16 89.7726(-5835)/mV 0 0 -13915 -5088 0 iii
+64.dat 16 100.3583(21125)/mV 0 0 24336 22143 0 avr
+64.dat 16 93.62(-7022)/mV 0 0 -2247 -17903 0 avl
+64.dat 16 128.2466(-15454)/mV 0 0 -26098 27989 0 avf
+64.dat 16 74.896(23405)/mV 0 0 30146 -32233 0 v1
+64.dat 16 49.3108(16889)/mV 0 0 20932 18211 0 v2
+64.dat 16 47.2487(20624)/mV 0 0 22750 31601 0 v3
+64.dat 16 28.0419(-8931)/mV 0 0 -13979 -27598 0 v4
+64.dat 16 35.3474(-18911)/mV 0 0 -17320 30906 0 v5
+64.dat 16 15.3655(-19015)/mV 0 0 -31185 -22104 0 v6
+#<age>: 67
+#<sex>: M
+#<diagnoses>:
+#Electric axis of the heart: horizontal. 
+#Left atrial hypertrophy. 
+#Left ventricular hypertrophy. 
+#STEMI: anterior wall. 
+#STEMI: lateral wall. 
+#STEMI: septal. 
+#STEMI: inferior wall. 
+#Scar formation: anterior wall. 
+#Scar formation: lateral wall. 
+#Scar formation: septal. 

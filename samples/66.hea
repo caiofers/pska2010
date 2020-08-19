@@ -1,0 +1,25 @@
+66 12 500 5000
+66.dat 16 60.7922(-22797)/mV 0 0 -27052 29719 0 i
+66.dat 16 63.8111(-14262)/mV 0 0 15219 -15704 0 ii
+66.dat 16 76.7377(-8057)/mV 0 0 32767 -22046 0 iii
+66.dat 16 67.7704(22263)/mV 0 0 8980 3642 0 avr
+66.dat 16 73.5511(-10260)/mV 0 0 -32399 -30280 0 avl
+66.dat 16 84.3423(-9151)/mV 0 0 32767 -20991 0 avf
+66.dat 16 50.7229(20847)/mV 0 0 12224 13115 0 v1
+66.dat 16 45.0715(-4958)/mV 0 0 -11944 -28225 0 v2
+66.dat 16 27.9463(-17397)/mV 0 0 -25418 -4235 0 v3
+66.dat 16 25.5992(-24063)/mV 0 0 -32562 -22304 0 v4
+66.dat 16 26.2556(-17486)/mV 0 0 -32714 1729 0 v5
+66.dat 16 32.093(-14089)/mV 0 0 -32607 5897 0 v6
+#<age>: 55
+#<sex>: M
+#<diagnoses>:
+#Electric axis of the heart: left axis deviation. 
+#Incomplete right bundle branch block. 
+#Atrial extrasystole: low atrial. 
+#Atrial extrasystole, type: single PAC. 
+#Left atrial hypertrophy. 
+#Left ventricular hypertrophy. 
+#Non-specific repolarization abnormalities: anterior wall. 
+#Non-specific repolarization abnormalities: lateral wall. 
+#Non-specific repolarization abnormalities: septal. 

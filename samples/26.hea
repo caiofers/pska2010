@@ -1,0 +1,25 @@
+26 12 500 5000
+26.dat 16 89.7726(-17775)/mV 0 0 -23969 -27170 0 i
+26.dat 16 82.1228(-9034)/mV 0 0 -12073 -8761 0 ii
+26.dat 16 55.1169(10886)/mV 0 0 12650 25987 0 iii
+26.dat 16 150.3073(19841)/mV 0 0 27807 883 0 avr
+26.dat 16 68.9106(-13679)/mV 0 0 -17193 -26850 0 avl
+26.dat 16 67.0082(3216)/mV 0 0 3015 -2647 0 avf
+26.dat 16 37.0667(19460)/mV 0 0 31210 -30832 0 v1
+26.dat 16 26.4143(21224)/mV 0 0 25847 -10202 0 v2
+26.dat 16 23.5819(20693)/mV 0 0 25221 -5846 0 v3
+26.dat 16 35.539(21501)/mV 0 0 14393 -13676 0 v4
+26.dat 16 132.6599(11011)/mV 0 0 13001 -32185 0 v5
+26.dat 16 120.4669(-12649)/mV 0 0 -29514 19245 0 v6
+#<age>: 54
+#<sex>: M
+#<diagnoses>:
+#Electric axis of the heart: left axis deviation. 
+#Left anterior hemiblock. 
+#Left atrial hypertrophy. 
+#Scar formation: anterior wall. 
+#Scar formation: lateral wall. 
+#Scar formation: septal. 
+#Scar formation: apical. 
+#Undefined ischemia/scar/supp.NSTEMI: lateral wall. 
+#Undefined ischemia/scar/supp.NSTEMI: apical. 

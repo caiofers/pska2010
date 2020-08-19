@@ -1,0 +1,26 @@
+125 12 500 5000
+125.dat 16 39.0316(-13290)/mV 0 0 -21096 -26773 0 i
+125.dat 16 33.6072(11258)/mV 0 0 12602 -12548 0 ii
+125.dat 16 20.2328(10127)/mV 0 0 14983 12591 0 iii
+125.dat 16 55.303(7051)/mV 0 0 11475 -30160 0 avr
+125.dat 16 27.6865(-10424)/mV 0 0 -16515 14415 0 avl
+125.dat 16 26.2451(9750)/mV 0 0 13424 -16637 0 avf
+125.dat 16 22.0653(4744)/mV 0 0 -8495 -22242 0 v1
+125.dat 16 11.6879(-10092)/mV 0 0 6972 9 0 v2
+125.dat 16 8.2485(-1052)/mV 0 0 -1382 -22992 0 v3
+125.dat 16 6.3135(-6377)/mV 0 0 -4735 19736 0 v4
+125.dat 16 11.7888(-20518)/mV 0 0 -19103 17449 0 v5
+125.dat 16 18.2089(-21131)/mV 0 0 -13847 -18035 0 v6
+#<age>: 67
+#<sex>: M
+#<diagnoses>:
+#Electric axis of the heart: left axis deviation. 
+#Incomplete right bundle branch block. 
+#Left anterior hemiblock. 
+#Ventricular extrasystole, morphology: polymorphic. 
+#Ventricular extrasystole, localisation: RVOT, anterior wall. 
+#Ventricular extrasystole, localisation: LV, undefined. 
+#Ventricular extrasystole, type: couplet. 
+#Left atrial hypertrophy. 
+#Left ventricular hypertrophy. 
+#Left ventricular overload. 

@@ -1,0 +1,21 @@
+172 12 500 5000
+172.dat 16 99.5957(-22309)/mV 0 0 -31771 1025 0 i
+172.dat 16 63.6252(-20360)/mV 0 0 -19278 -22384 0 ii
+172.dat 16 82.4327(-4328)/mV 0 0 4904 -22116 0 iii
+172.dat 16 86.1156(22433)/mV 0 0 25792 -24690 0 avr
+172.dat 16 110.3266(-13570)/mV 0 0 -24934 -23991 0 avl
+172.dat 16 81.7132(-17160)/mV 0 0 -11930 18726 0 avf
+172.dat 16 37.7935(19086)/mV 0 0 21354 18353 0 v1
+172.dat 16 37.9467(16374)/mV 0 0 1954 2061 0 v2
+172.dat 16 31.2067(4213)/mV 0 0 1342 416 0 v3
+172.dat 16 27.34(-15488)/mV 0 0 -25522 -11343 0 v4
+172.dat 16 36.7962(-24046)/mV 0 0 -32215 -22574 0 v5
+172.dat 16 37.62(-19600)/mV 0 0 -29833 31098 0 v6
+#<age>: 60
+#<sex>: F
+#<diagnoses>:
+#Electric axis of the heart: normal. 
+#Left atrial hypertrophy. 
+#Left ventricular hypertrophy. 
+#Non-specific repolarization abnormalities: septal. 
+#Non-specific repolarization abnormalities: apical. 

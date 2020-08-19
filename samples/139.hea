@@ -1,0 +1,20 @@
+139 12 500 5000
+139.dat 16 49.5719(-22506)/mV 0 0 -26967 27016 0 i
+139.dat 16 78.6723(-7985)/mV 0 0 -9558 19617 0 ii
+139.dat 16 80.0171(17644)/mV 0 0 23245 3968 0 iii
+139.dat 16 63.8111(19303)/mV 0 0 22813 -3366 0 avr
+139.dat 16 62.9529(-21498)/mV 0 0 -26534 23868 0 avl
+139.dat 16 112.4082(12534)/mV 0 0 15344 -2121 0 avf
+139.dat 16 39.9354(9045)/mV 0 0 6769 -27815 0 v1
+139.dat 16 31.103(14510)/mV 0 0 13204 19164 0 v2
+139.dat 16 28.4189(11765)/mV 0 0 18017 -9781 0 v3
+139.dat 16 22.5824(-7701)/mV 0 0 -8085 12805 0 v4
+139.dat 16 29.5331(-16376)/mV 0 0 -19625 17925 0 v5
+139.dat 16 36.8169(-19329)/mV 0 0 -28239 -32736 0 v6
+#<age>: 61
+#<sex>: F
+#<diagnoses>:
+#Electric axis of the heart: left axis deviation. 
+#Left atrial hypertrophy. 
+#Left ventricular hypertrophy. 
+#Non-specific repolarization abnormalities: posterior wall. 

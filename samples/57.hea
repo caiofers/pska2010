@@ -1,0 +1,22 @@
+57 12 500 5000
+57.dat 16 44.4298(-24681)/mV 0 0 -24548 -8736 0 i
+57.dat 16 37.004(-19002)/mV 0 0 -15672 30984 0 ii
+57.dat 16 84.451(15961)/mV 0 0 23308 -13292 0 iii
+57.dat 16 42.0899(23549)/mV 0 0 21613 75 0 avr
+57.dat 16 71.6219(-23528)/mV 0 0 -26536 21069 0 avl
+57.dat 16 56.156(-11709)/mV 0 0 -6711 -18519 0 avf
+57.dat 16 46.9441(7699)/mV 0 0 329 -28069 0 v1
+57.dat 16 30.7383(-14263)/mV 0 0 -19181 19112 0 v2
+57.dat 16 28.2596(-13494)/mV 0 0 -15331 20906 0 v3
+57.dat 16 29.6668(-16243)/mV 0 0 -19714 30054 0 v4
+57.dat 16 32.8491(-22255)/mV 0 0 -22748 -26569 0 v5
+57.dat 16 33.7109(-24676)/mV 0 0 -26530 6517 0 v6
+#<age>: 65
+#<sex>: F
+#<diagnoses>:
+#Electric axis of the heart: right axis deviation. 
+#Left atrial hypertrophy. 
+#Left ventricular hypertrophy. 
+#Left ventricular overload. 
+#Scar formation: posterior wall. 
+#Undefined ischemia/scar/supp.NSTEMI: anterior wall. 

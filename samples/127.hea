@@ -1,0 +1,25 @@
+127 12 500 5000
+127.dat 16 58.3043(-15334)/mV 0 0 -31659 -29463 0 i
+127.dat 16 21.3119(-28846)/mV 0 0 -32682 26759 0 ii
+127.dat 16 21.2359(-25865)/mV 0 0 -23741 -3461 0 iii
+127.dat 16 37.6416(24109)/mV 0 0 32767 28506 0 avr
+127.dat 16 35.6939(14206)/mV 0 0 7424 8968 0 avl
+127.dat 16 21.6928(-28537)/mV 0 0 -29405 4545 0 avf
+127.dat 16 16.6923(-10817)/mV 0 0 11551 -16319 0 v1
+127.dat 16 16.5825(-11873)/mV 0 0 -6235 -13382 0 v2
+127.dat 16 19.4405(-17409)/mV 0 0 21861 -31627 0 v3
+127.dat 16 19.2804(-24014)/mV 0 0 -20544 -5251 0 v4
+127.dat 16 19.4117(-25507)/mV 0 0 -27448 10116 0 v5
+127.dat 16 19.9434(-26505)/mV 0 0 -28499 20120 0 v6
+#<age>: 86
+#<sex>: M
+#<diagnoses>:
+#Wandering atrial pacemaker. 
+#Electric axis of the heart: horizontal. 
+#Left atrial hypertrophy. 
+#Left atrial overload. 
+#Left ventricular hypertrophy. 
+#Left ventricular overload. 
+#Scar formation: posterior wall. 
+#Undefined ischemia/scar/supp.NSTEMI: lateral wall. 
+#Undefined ischemia/scar/supp.NSTEMI: apical. 

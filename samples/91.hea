@@ -1,0 +1,20 @@
+91 12 500 5000
+91.dat 16 56.4948(-20903)/mV 0 0 -28812 29508 0 i
+91.dat 16 31.2067(-7178)/mV 0 0 8425 -28676 0 ii
+91.dat 16 30.0064(1590)/mV 0 0 20794 15533 0 iii
+91.dat 16 43.0295(11984)/mV 0 0 4239 6083 0 avr
+91.dat 16 42.3073(-8694)/mV 0 0 -25194 24896 0 avl
+91.dat 16 36.8375(-3960)/mV 0 0 17037 -14465 0 avf
+91.dat 16 36.3069(14614)/mV 0 0 11709 12561 0 v1
+91.dat 16 28.8696(9383)/mV 0 0 4764 -12632 0 v2
+91.dat 16 24.6368(5666)/mV 0 0 -5667 14042 0 v3
+91.dat 16 23.4889(-822)/mV 0 0 -1292 17421 0 v4
+91.dat 16 25.4996(-11857)/mV 0 0 -21037 -12059 0 v5
+91.dat 16 32.2193(-17334)/mV 0 0 -25067 5799 0 v6
+#<age>: 38
+#<sex>: M
+#<diagnoses>:
+#Electric axis of the heart: left axis deviation. 
+#Non-specific intravintricular conduction delay. 
+#Left atrial hypertrophy. 
+#Left ventricular hypertrophy. 

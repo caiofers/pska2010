@@ -1,0 +1,20 @@
+45 12 500 5000
+45.dat 16 22.2905(5573)/mV 0 0 7356 1241 0 i
+45.dat 16 30.2279(10701)/mV 0 0 19165 -28645 0 ii
+45.dat 16 19.2408(2655)/mV 0 0 6503 -18744 0 iii
+45.dat 16 34.293(634)/mV 0 0 -5539 21577 0 avr
+45.dat 16 23.0672(5109)/mV 0 0 3725 28276 0 avl
+45.dat 16 28.0539(12232)/mV 0 0 18965 6975 0 avf
+45.dat 16 36.8375(5802)/mV 0 0 15380 -15854 0 v1
+45.dat 16 31.6896(14609)/mV 0 0 1933 12786 0 v2
+45.dat 16 24.5538(16684)/mV 0 0 13738 29808 0 v3
+45.dat 16 30.2977(16437)/mV 0 0 10983 5977 0 v4
+45.dat 16 32.8162(11765)/mV 0 0 11765 16444 0 v5
+45.dat 16 41.3203(12933)/mV 0 0 13759 838 0 v6
+#<age>: 84
+#<sex>: F
+#<diagnoses>:
+#Ventricular extrasystole, localisation: RVOT, anterior wall. 
+#Ventricular extrasystole, type: single PVC. 
+#UNIpolar atrial pacing. 
+#UNIpolar ventricular pacing. 

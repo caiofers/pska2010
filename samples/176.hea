@@ -1,0 +1,20 @@
+176 12 500 5000
+176.dat 16 61.3614(-5768)/mV 0 0 -11597 -1430 0 i
+176.dat 16 74.1335(-10008)/mV 0 0 -19645 30020 0 ii
+176.dat 16 98.8446(-4201)/mV 0 0 -7661 -11591 0 iii
+176.dat 16 69.3481(8634)/mV 0 0 16401 30676 0 avr
+176.dat 16 80.3113(-2570)/mV 0 0 -4979 2972 0 avl
+176.dat 16 148.6032(-11665)/mV 0 0 -23999 20669 0 avf
+176.dat 16 61.5921(15213)/mV 0 0 11210 31214 0 v1
+176.dat 16 21.3884(13582)/mV 0 0 12042 -9066 0 v2
+176.dat 16 23.6499(13800)/mV 0 0 17939 -2085 0 v3
+176.dat 16 27.2717(4841)/mV 0 0 7486 -18740 0 v4
+176.dat 16 33.1482(-7574)/mV 0 0 2271 30307 0 v5
+176.dat 16 46.511(-17186)/mV 0 0 -15000 -9026 0 v6
+#<age>: 60
+#<sex>: M
+#<diagnoses>:
+#Electric axis of the heart: horizontal. 
+#Incomplete right bundle branch block. 
+#Right atrial overload. 
+#Non-specific repolarization abnormalities: posterior wall. 
