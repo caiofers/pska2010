@@ -5,8 +5,8 @@ import random
 
 class SensorTransmitter(Sensor):
 
-    def __init__(self, frequency, seconds, order, filterMin, filterMax, IDt, IDr):
-       super().__init__(frequency, seconds, order, filterMin, filterMax)
+    def __init__(self, frequency, seconds, order, IDt, IDr):
+       super().__init__(frequency, seconds, order)
        self.__IDt = IDt
        self.__IDr = IDr
 
@@ -58,7 +58,7 @@ class SensorTransmitter(Sensor):
         M = len(self._featsVector)/2
 
         while(i < M):
-            chaffFeat = random.randint(0, max(self._featsVector))
+            chaffFeat = random.randint(0, max(self._featsVector)+100)
             if chaffFeat not in self._featsVector and chaffFeat not in chaffFeatVector:
                 chaffFeatVector.append(chaffFeat)
                 while(1):
@@ -88,10 +88,12 @@ class SensorTransmitter(Sensor):
 
     def receiveAckMessage(self, message):
         self.__receivedMAC = message["MAC"]
-        self.__checkMAC()
+        return self.__checkMAC()
 
     def __checkMAC(self):
         if (self._macHMAC(str(self.__Nounce)+str(self.__IDt)+str(self.__IDr), str(self.__commonKey)) == self.__receivedMAC):
-            print("Receive with sucess")
+            #print("Receive with sucess")
+            return True
         else:
-            print("Not received")
+            #print("Not received")
+            return False

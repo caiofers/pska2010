@@ -6,8 +6,8 @@ import random
 
 class SensorReceiver(Sensor):
 
-    def __init__(self, frequency, seconds, order, filterMin, filterMax, IDr):
-       super().__init__(frequency, seconds, order, filterMin, filterMax)
+    def __init__(self, frequency, seconds, order, IDr):
+       super().__init__(frequency, seconds, order)
        self.__IDr = IDr
 
     def receiveTransmitterMessage(self, message):
@@ -52,9 +52,11 @@ class SensorReceiver(Sensor):
 
     def __checkMAC(self):
         if (self._macHMAC(str(self.__lockedVault)+str(self.__Nounce)+str(self.__IDt), str(self.__keyCommon)) == self.__receivedMAC):
-            print("Accepted")
+            #print("Accepted")
+            return True
         else:
-            print("Not Accepted")
+            #print("Not Accepted")
+            return False
 
     def createAckMessage(self):
         message = {}

@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import fftpack
-from scipy.signal import find_peaks
+from scipy import signal
 import pandas as pd
 import hashlib
 import random
@@ -11,12 +11,10 @@ import binascii
 
 class Sensor:
 
-    def __init__(self, frequency, seconds, order, filterMin, filterMax):
+    def __init__(self, frequency, seconds, order):
         self.__frequency = frequency
         self.__seconds = seconds
         self._order = order
-        self.__filterMin = filterMin
-        self.__filterMax = filterMax
         self.__verbose = False
         self.__plot = False
         self.__savePlot = False
@@ -28,12 +26,18 @@ class Sensor:
         self.__plot = plot
         self.__savePlot = savePlot
 
-    def extractFeats(self, data):
-        # Pegando 625 amostras dos dados (125hz durante 5 segundos) 
-        data = data[0:(self.__frequency*self.__seconds)]
+    def extractFeats(self, record):
+
+        data =[]
+
+        for i in range(len(record.d_signal)):
+            data.extend(record.d_signal[i])
+
+        # Pegando amostras dos dados 
+        data = data[0:int(self.__frequency*self.__seconds)]
 
         # Aplicando filtro nos dados
-        data = np.array(self.__filter(data))
+        #data = self.__filter(data)
 
         # Dividindo as amostras em 5 janelas de 125 amostras (1 janela para cada segundo) 
         division = self.__divideSamples(data)
@@ -43,24 +47,20 @@ class Sensor:
         return self._featsVector
 
     def __filter(self, data):
-        # Criação de uma lista vazia para adicionar os dados filtrados
-        auxData = []
-        for i in range(len(data)):
-            if int(data[i]) < self.__filterMax and int(data[i]) > self.__filterMin:
-                # Se o dado estiver entre o máximo e míno pré-estabelecido, o valor é adicionado à lista de dados filtrados
-                auxData.append(data[i])
+        b, a = signal.butter(3, 0.05)
+        filtered = signal.filtfilt(b, a, data)
         
         if self.__verbose:
             print("\nDados sem filtro: ")
             print(data)
             print("\nDados filtrados: ")
-            print(np.array(auxData))
+            print(filtered)
         
         if self.__plot:
             self.__plotPy('Sample', 'Signal', data)
-            self.__plotPy('Sample', 'Signal w/ Filter', np.array(auxData))
+            self.__plotPy('Sample', 'Signal w/ Filter', filtered)
         
-        return np.array(auxData)
+        return filtered
 
     def __plotPy(self, xlabel, ylabel, data):
         plt.title(xlabel + ' X ' + ylabel)
@@ -68,20 +68,16 @@ class Sensor:
         plt.ylabel(ylabel)
 
         plt.plot(data)
-        if self.__savePlot: plt.savefig('graficos/filtrado.png')
-        plt.show()
-
-
-        plt.plot(np.arange(len(data)), data)
-        if self.__savePlot: plt.savefig('graficos/bruto.png')
+        if self.__savePlot: plt.savefig('graficos/'+ylabel)
         plt.show()
 
     def __divideSamples(self, data):
         auxData = []
         division = []
-        #Dividindo as amostras em janelas (sec é a quantidade de segundos/janelas)
-        for i in range(self.__seconds):
-            for j in range(int(len(data)/self.__seconds)): #(frequency é a quantidade de amostras que tem em cada segundo)
+        #Definindo numero de janelas
+        numOfWindows = 2
+        for i in range(numOfWindows):
+            for j in range(int(len(data)/numOfWindows)):
                 auxData.append(data[(i + 1) * j])
             np.array(auxData)
             division.append(auxData.copy())
@@ -101,19 +97,22 @@ class Sensor:
             X = self.__fftAply(data, 128, index)
 
             # Definindo tamanho mínimo dos picos a serem detectados
-            vMaxHeight = 10
+            vMaxHeight = 5
 
             #Encontrando os picos da FFT
             peaks = self.__findPeaks(X, vMaxHeight, index)
-
+            if len(peaks) == 0:
+                return featVectorInt
             # Definindo numero de bits da quantização
-            nQuantBits = 4
+            nQuantBitsValue = 4
+            nQuantBitsIndex = 4
 
             #Aplicando a quantização para discretizar os pontos
-            pt1 = self.__quantization(peaks, nQuantBits)
-            pt2 = self.__quantization(X[peaks], nQuantBits)
+            pt1 = self.__quantization(peaks, nQuantBitsIndex)
+            pt2 = self.__quantization(X[peaks], nQuantBitsValue)
 
             if self.__plot:
+                plt.title("Dados quantizados")
                 plt.plot(pt1, pt2)
                 if self.__savePlot: plt.savefig('graficos/quantpeaks' + str(index) + '.png')
                 plt.show()
@@ -156,10 +155,13 @@ class Sensor:
             ax.set_xlabel('Frequency in Hertz [Hz]')
             ax.set_ylabel('Frequency Domain (Spectrum) Magnitude')
             ax.set_xlim(-self.__frequency / 2, self.__frequency / 2)
-            ax.set_ylim(-5, 125)
+            #ax.set_ylim(-5, self.__frequency)
             
             if self.__savePlot: plt.savefig('graficos/fftfreqparte' + str(index) + '.png')
+            plt.title("FFT Freq")
             plt.show()
+
+            plt.title("FFT")
             plt.plot(X)
             if self.__savePlot: plt.savefig('graficos/fftparte' + str(index) + '.png')
             plt.show()
@@ -170,7 +172,7 @@ class Sensor:
 
         if self.__verbose: print("\nDETECÇÃO DE PICOS - START")
 
-        peaks, _ = find_peaks(data, height=height)
+        peaks, _ = signal.find_peaks(data, height=height)
 
         if self.__verbose:
             print("\nDados:")
@@ -182,6 +184,7 @@ class Sensor:
             print("\nDETECÇÃO DE PICOS - END\n")
         
         if self.__plot:
+            plt.title("Picos")
             plt.plot(data)
             plt.plot(peaks, data[peaks], "x")
             plt.plot(np.zeros_like(data), "--", color="gray")
@@ -189,37 +192,78 @@ class Sensor:
             plt.show()
         return peaks
 
+    '''def __quantization(self, data, B, nbits = 32):
+        """
+        Requantiza sinal amostrado originalmente com nbits
+        no sinal y representado com B bits
+            input:
+                sinal: sinal original (assume-se media em torno de zero)
+                nbits: no. de bits da amostragem original
+                B: no. de bits da reamostragem
+            output:
+                y: sinal requantizado em B bits
+
+        Exemplo:
+        p = np.arange(-1,1,.1)
+        y0 = requantiza(p, 32, 1)
+        y1 = requantiza(p, 32, 2)
+        y2 = requantiza(p, 32, 4)
+        y3 = requantiza(p, 32, 8)
+
+        IS-25jan2017
+        """
+        if B >= nbits: # nada a fazer
+            y = data
+            return y
+
+        M = 2**(nbits-1)
+        Q = 2**(B-1)
+        if max(data) - min(data) < 2: # sinal normalizado
+            sinal2 = data * M
+            if max(sinal2) > M:
+                print('Checar sinal')
+                return []
+
+            sinal2 = np.floor(sinal2)
+            y = np.floor(sinal2/M*Q)
+            y = y/Q
+            return y
+        else:
+            return []
+
+    '''
     def __quantization(self, data, nQuantBits):
         if self.__verbose: print("\nQUANTIZAÇÃO - INÍCIO")
-        
-        # Definindo limite superior e inferior dos dados a serem quantizados
-        vMax = max(data)
-        vMin = min(data)
 
         # Criação de uma lista vazia para armazenar os coeficientes quantizados
         quantized_coeffs = []
 
-        # Definindo o número de níveis de acordo com a quantidade de bits
-        nLevels = 2^nQuantBits
+        if len(data) != 0:
+            # Definindo limite superior e inferior dos dados a serem quantizados
+            vMax = max(data)
+            vMin = min(data)
 
-        # Definindo distância entre os níveis
-        distLevels = (vMax-vMin)/nLevels
+            # Definindo o número de níveis de acordo com a quantidade de bits
+            nLevels = 2^nQuantBits
 
-        # Quantização de cada um dos valores da lista de dados 
-        for d in data:
-            level = 0
-            limiar = vMin+(level+1)*distLevels
-            while(d > limiar and limiar < vMax):
-                level = level + 1
+            # Definindo distância entre os níveis
+            distLevels = (vMax-vMin)/nLevels
+
+            # Quantização de cada um dos valores da lista de dados 
+            for d in data:
+                level = 0
                 limiar = vMin+(level+1)*distLevels
-            quantized_coeffs.append(level)
+                while(d > limiar and limiar < vMax):
+                    level = level + 1
+                    limiar = vMin+(level+1)*distLevels
+                quantized_coeffs.append(level)
 
-        if self.__verbose:
-            print("\nDados:")
-            print(data)
-            print("\nDados Quantizados:")
-            print(quantized_coeffs)
-            print("\nQUANTIZAÇÃO - FIM\n")
+            if self.__verbose:
+                print("\nDados:")
+                print(data)
+                print("\nDados Quantizados:")
+                print(quantized_coeffs)
+                print("\nQUANTIZAÇÃO - FIM\n")
         
         return quantized_coeffs
     
