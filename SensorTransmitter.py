@@ -39,6 +39,7 @@ class SensorTransmitter(Sensor):
         for i in range(len(chaffPoly)):
             vault.append((chaffFeat[i],chaffPoly[i]))
         
+        print("Itens no cofre: " + str(len(vault)))
         self.__lockVault(vault)
         
         return self.__vaultLocked, key    

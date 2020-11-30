@@ -6,6 +6,8 @@ import tracemalloc
 from SensorTransmitter import SensorTransmitter
 from SensorReceiver import SensorReceiver
 
+cofre = []
+
 def timeStatistics():
     timeExtractFeatTransmitterArray = []
     timeExtractFeatReceiverArray = []
@@ -15,7 +17,8 @@ def timeStatistics():
     totalTimeReceiverArray = []
     memoryPeakArray = []
 
-    for i in range(200):
+
+    for i in range(50):
         recordTransmitter = wfdb.rdrecord('samples/'+str(i+1), physical=False, sampfrom=0, channel_names=['avf'])
         recordReceiver = wfdb.rdrecord('samples/'+str(i+1), physical=False, sampfrom=0, channel_names=['avf'])
         
@@ -77,6 +80,51 @@ def timeStatistics():
     print("Mean: " + str(statistics.mean(memoryPeakArray)) + " Bytes")
     print("Standard Deviation: " + str(statistics.pstdev(memoryPeakArray)) + " Bytes")
     print("Variance: " + str(statistics.pvariance(memoryPeakArray)) + " Bytes")
+
+    global cofre
+
+    print(cofre)
+    print(statistics.mean(cofre))
+
+    archive = open('empiricalStatistics.txt', 'w')
+
+    archive.write("\nTotal statistics")
+
+    archive.write("\n\nTime to Extract Features on Transmitter")
+    archive.write("\nMean: " + str(round(statistics.mean(timeExtractFeatTransmitterArray), 2)).replace('.', ','))
+    archive.write("\nStandard Deviation: " + str(round(statistics.pstdev(timeExtractFeatTransmitterArray), 2)).replace('.', ','))
+    archive.write("\nVariance: " + str(round(statistics.pvariance(timeExtractFeatTransmitterArray), 2)).replace('.', ','))
+
+    archive.write("\n\nTime to Extract Features on Receiver")
+    archive.write("\nMean: " + str(round(statistics.mean(timeExtractFeatReceiverArray), 2)).replace('.', ','))
+    archive.write("\nStandard Deviation: " + str(round(statistics.pstdev(timeExtractFeatReceiverArray), 2)).replace('.', ','))
+    archive.write("\nVariance: " + str(round(statistics.pvariance(timeExtractFeatReceiverArray), 2)).replace('.', ','))
+
+    archive.write("\n\nTime to generate the locked vault on Transmitter")
+    archive.write("\nMean: " + str(round(statistics.mean(timeGenerateLockVaultArray), 2)).replace('.', ','))
+    archive.write("\nStandard Deviation: " + str(round(statistics.pstdev(timeGenerateLockVaultArray), 2)).replace('.', ','))
+    archive.write("\nVariance: " + str(round(statistics.pvariance(timeGenerateLockVaultArray), 2)).replace('.', ','))
+
+    archive.write("\n\nTime to unlock vault on Receiver")
+    archive.write("\nMean: " + str(round(statistics.mean(timeUnlockVaultArray), 2)).replace('.', ','))
+    archive.write("\nStandard Deviation: " + str(round(statistics.pstdev(timeUnlockVaultArray), 2)).replace('.', ','))
+    archive.write("\nVariance: " + str(round(statistics.pvariance(timeUnlockVaultArray), 2)).replace('.', ','))
+
+    archive.write("\n\nTotal Time Transmitter")
+    archive.write("\nMean: " + str(round(statistics.mean(totalTimeTransmitterArray), 2)).replace('.', ','))
+    archive.write("\nStandard Deviation: " + str(round(statistics.pstdev(totalTimeTransmitterArray), 2)).replace('.', ','))
+    archive.write("\nVariance: " + str(round(statistics.pvariance(totalTimeTransmitterArray), 2)).replace('.', ','))
+
+    archive.write("\n\nTotal Time Receiver")
+    archive.write("\nMean: " + str(round(statistics.mean(totalTimeReceiverArray), 2)).replace('.', ','))
+    archive.write("\nStandard Deviation: " + str(round(statistics.pstdev(totalTimeReceiverArray), 2)).replace('.', ','))
+    archive.write("\nVariance: " + str(round(statistics.pvariance(totalTimeReceiverArray), 2)).replace('.', ','))
+
+    archive.close()
+
+
+
+
 def PSKAPROTOCOLTIME(recordTransmitter, recordReceiver):
 
     # Definindo frequencia e quantidade de tempo para coleta das amostras
@@ -84,7 +132,7 @@ def PSKAPROTOCOLTIME(recordTransmitter, recordReceiver):
     seconds = 10
 
     # Definindo ordem do polinômio
-    order = 5
+    order = 8
 
     IDt = 1
     IDr = 2
@@ -113,12 +161,14 @@ def PSKAPROTOCOLTIME(recordTransmitter, recordReceiver):
     
 
     inicio = time.time()
-    sensorTransmitter.generateVault()
+    vault, _ = sensorTransmitter.generateVault()
     message = sensorTransmitter.createTransmitterMessage()
     fim = time.time()
     timeGenerateLockVault = fim - inicio
 
-    
+    global cofre
+
+    cofre.append(len(vault))
     
     inicio = time.time()
     sensorReceiver.receiveTransmitterMessage(message)
@@ -131,7 +181,7 @@ def PSKAPROTOCOLTIME(recordTransmitter, recordReceiver):
     sensorTransmitter.receiveAckMessage(message)
     
     
-    return timeExtractFeatTransmitter, timeExtractFeatReceiver, timeGenerateLockVault, timeUnlockVault
+    return timeExtractFeatTransmitter*1000, timeExtractFeatReceiver*1000, timeGenerateLockVault*1000, timeUnlockVault*1000
 
 
 timeStatistics()

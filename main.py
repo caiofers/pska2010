@@ -22,7 +22,7 @@ def PSKAPROTOCOL(recordTransmitter, recordReceiver):
     seconds = 2
 
     # Definindo ordem do polinômio
-    order = 5
+    order = 8
 
     IDt = 1
     IDr = 2

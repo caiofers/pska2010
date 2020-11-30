@@ -13,8 +13,8 @@ def memoryPeakStatistics():
     totalMemoryPeakTransmitterArray = []
     totalMemoryPeakReceiverArray = []
     memoryPeakArray = []
-
-    for i in range(200):
+    
+    for i in range(50):
         recordTransmitter = wfdb.rdrecord('samples/'+str(i+1), physical=False, sampfrom=0, channel_names=['avf'])
         recordReceiver = wfdb.rdrecord('samples/'+str(i+1), physical=False, sampfrom=0, channel_names=['avf'])
         
@@ -67,14 +67,52 @@ def memoryPeakStatistics():
     print("Standard Deviation: " + str(statistics.pstdev(totalMemoryPeakReceiverArray)))
     print("Variance: " + str(statistics.pvariance(totalMemoryPeakReceiverArray)))
 
+
+    archive = open('memoryStatistics.txt', 'w')
+
+    archive.write("\nTotal statistics")
+
+    archive.write("\n\nMemory Peak to Extract Features on Transmitter")
+    archive.write("\nMean: " + str(round(statistics.mean(memoryPeakExtractFeatTransmitterArray), 2)).replace('.', ','))
+    archive.write("\nStandard Deviation: " + str(round(statistics.pstdev(memoryPeakExtractFeatTransmitterArray), 2)).replace('.', ','))
+    archive.write("\nVariance: " + str(round(statistics.pvariance(memoryPeakExtractFeatTransmitterArray), 2)).replace('.', ','))
+
+    archive.write("\n\nMemory Peak to Extract Features on Receiver")
+    archive.write("\nMean: " + str(round(statistics.mean(memoryPeakExtractFeatReceiverArray), 2)).replace('.', ','))
+    archive.write("\nStandard Deviation: " + str(round(statistics.pstdev(memoryPeakExtractFeatReceiverArray), 2)).replace('.', ','))
+    archive.write("\nVariance: " + str(round(statistics.pvariance(memoryPeakExtractFeatReceiverArray), 2)).replace('.', ','))
+
+    archive.write("\n\nMemory Peak to generate the locked vault on Transmitter")
+    archive.write("\nMean: " + str(round(statistics.mean(memoryPeakGenerateLockVaultArray), 2)).replace('.', ','))
+    archive.write("\nStandard Deviation: " + str(round(statistics.pstdev(memoryPeakGenerateLockVaultArray), 2)).replace('.', ','))
+    archive.write("\nVariance: " + str(round(statistics.pvariance(memoryPeakGenerateLockVaultArray), 2)).replace('.', ','))
+
+    archive.write("\n\nMemory Peak to unlock vault on Receiver")
+    archive.write("\nMean: " + str(round(statistics.mean(memoryPeakUnlockVaultArray), 2)).replace('.', ','))
+    archive.write("\nStandard Deviation: " + str(round(statistics.pstdev(memoryPeakUnlockVaultArray), 2)).replace('.', ','))
+    archive.write("\nVariance: " + str(round(statistics.pvariance(memoryPeakUnlockVaultArray), 2)).replace('.', ','))
+
+    archive.write("\n\nTotal Memory Peak Transmitter")
+    archive.write("\nMean: " + str(round(statistics.mean(totalMemoryPeakTransmitterArray), 2)).replace('.', ','))
+    archive.write("\nStandard Deviation: " + str(round(statistics.pstdev(totalMemoryPeakTransmitterArray), 2)).replace('.', ','))
+    archive.write("\nVariance: " + str(round(statistics.pvariance(totalMemoryPeakTransmitterArray), 2)).replace('.', ','))
+
+    archive.write("\n\nTotal Memory Peak Receiver")
+    archive.write("\nMean: " + str(round(statistics.mean(totalMemoryPeakReceiverArray), 2)).replace('.', ','))
+    archive.write("\nStandard Deviation: " + str(round(statistics.pstdev(totalMemoryPeakReceiverArray), 2)).replace('.', ','))
+    archive.write("\nVariance: " + str(round(statistics.pvariance(totalMemoryPeakReceiverArray), 2)).replace('.', ','))
+
+    archive.close()
+
+
 def PSKAPROTOCOLTIME(recordTransmitter, recordReceiver):
 
     # Definindo frequencia e quantidade de tempo para coleta das amostras
     frequency = 500
-    seconds = 2
+    seconds = 10
 
     # Definindo ordem do polinômio
-    order = 5
+    order = 8
 
     IDt = 1
     IDr = 2

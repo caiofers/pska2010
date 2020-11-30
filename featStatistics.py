@@ -12,12 +12,13 @@ def featStatistics():
     FARArray = []
     random.seed(time.time())
 
-    for i in range(1):
-        AR, FRR = testFRR(i+1, 200, 50)
+
+    for i in range(50):
+        AR, FRR = testFRR(i+1, 100, 50)
         ARArray.append(AR)
         FRRArray.append(FRR)
 
-        RR, FAR = testFAR(i+1, 200, 50)
+        RR, FAR = testFAR(i+1, 100, 50)
         RRArray.append(RR)
         FARArray.append(FAR)
 
@@ -35,26 +36,38 @@ def featStatistics():
     print("------------------------------------------")
     print("------------------------------------------")
     print("------------------------------------------")
-    print("Acceptance Rate")
+    print("Acceptance Rate: " + str((sum(ARArray)/len(ARArray))*100) + "%")
     print(str((sum(ARArray)/len(ARArray))*100)+"%")
-    print("False Rejection Rate")
-    print(str((sum(FRRArray)/len(FRRArray))*100)+"%")
+    print("False Rejection Rate: " + str((sum(FRRArray)/len(FRRArray))*100) + "%")
     print("---------------------")
-    print("Rejection Rate")
-    print(str((sum(RRArray)/len(RRArray))*100)+"%")
-    print("False Acceptance Rate")
-    print(str((sum(FARArray)/len(FARArray))*100)+"%")
+    print("Rejection Rate: " + str((sum(RRArray)/len(RRArray))*100) + "%")
+    print("False Acceptance Rate: " + str((sum(FARArray)/len(FARArray))*100) + "%")
+
+    archive = open('featStatistics.txt', 'w')
+    archive.write("\nTotal Statistics")
+    archive.write("\nAcceptance Rate: " + str((sum(ARArray)/len(ARArray))*100) + "%")
+    archive.write("\nFalse Rejection Rate: " + str((sum(FRRArray)/len(FRRArray))*100) + "%")
+    archive.write("\n---------------------")
+    archive.write("\nRejection Rate: " + str((sum(RRArray)/len(RRArray))*100) + "%")
+    archive.write("\nFalse Acceptance Rate: " + str((sum(FARArray)/len(FARArray))*100) + "%")
+    archive.close()
+
 
 def testFRR(recordNum, iterations, sampleVariation):
     count = 0
     countFRR = 0
+    #recordNum = f"{recordNum:03d}"
+    print(recordNum)
     for i in range(iterations):
-        sampleFromT = random.randint(sampleVariation, 1000)
-        randSampleFromR = random.randint(0, 1)
-        if(randSampleFromR == 0): sampleFromR = sampleFromT - sampleVariation
-        else: sampleFromR = sampleFromT + sampleVariation
-        recordTransmitter = wfdb.rdrecord('samples/'+str(recordNum), physical=False, sampfrom=sampleFromT, channel_names=['avf'])
-        recordReceiver = wfdb.rdrecord('samples/'+str(recordNum), physical=False, sampfrom=sampleFromR, channel_names=['avf'])
+        sampleFrom = random.randint(0, 800)
+        recordTransmitter = wfdb.rdrecord('samples/'+str(recordNum), physical=False, sampfrom=sampleFrom, channel_names=['avf'])
+        #recordTransmitter = wfdb.rdrecord('samples/patient'+recordNum+'/seg01', physical=False, sampfrom=0, channel_names=['V6-Raw'])
+        recordReceiver = wfdb.rdrecord('samples/'+str(recordNum), physical=False, sampfrom=sampleFrom, channel_names=['avf'])
+        #recordReceiver = wfdb.rdrecord('samples/patient'+recordNum+'/seg01', physical=False, sampfrom=0, channel_names=['V6-Raw'])
+        # print(recordReceiver.sig_name)
+        # print(recordReceiver.fs)
+        # print(len(recordReceiver.d_signal))
+        
         if(PSKAPROTOCOL(recordTransmitter, recordReceiver)):
             count = count + 1
         else:
@@ -66,15 +79,15 @@ def testFAR(recordNum, iterations, sampleVariation):
     countFAR = 0
     recordNumT = recordNum
     for i in range(iterations):
-        sampleFromT = random.randint(sampleVariation, 1000)
-        randSampleFromR = random.randint(0, 1)
-        if(randSampleFromR == 0): sampleFromR = sampleFromT - sampleVariation
-        else: sampleFromR = sampleFromT + sampleVariation
+        sampleFrom = random.randint(0, 800)
+
         recordNumR = random.randint(1, 200)
         while recordNumR == recordNumT:
-            recordNumR = random.randint(1, 200) 
-        recordTransmitter = wfdb.rdrecord('samples/'+str(recordNumT), physical=False, sampfrom=sampleFromT, channel_names=['avf'])
-        recordReceiver = wfdb.rdrecord('samples/'+str(recordNumR), physical=False, sampfrom=sampleFromR, channel_names=['avf'])
+             recordNumR = random.randint(1, 200)
+        recordTransmitter = wfdb.rdrecord('samples/'+str(recordNumT), physical=False, sampfrom=sampleFrom, channel_names=['avf'])
+        # recordTransmitter = wfdb.rdrecord('samples/patient'+recordNumT+'/seg01', physical=False, sampfrom=0, channel_names=['V6-Raw'])
+        recordReceiver = wfdb.rdrecord('samples/'+str(recordNumR), physical=False, sampfrom=sampleFrom, channel_names=['avf'])
+        # recordReceiver = wfdb.rdrecord('samples/patient'+recordNumR+'/seg01', physical=False, sampfrom=0, channel_names=['V6-Raw'])
         if(PSKAPROTOCOL(recordTransmitter, recordReceiver)):
             countFAR = countFAR + 1
         else:

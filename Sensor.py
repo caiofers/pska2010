@@ -75,7 +75,7 @@ class Sensor:
         auxData = []
         division = []
         #Definindo numero de janelas
-        numOfWindows = 2
+        numOfWindows = 8
         for i in range(numOfWindows):
             for j in range(int(len(data)/numOfWindows)):
                 auxData.append(data[(i + 1) * j])
@@ -172,7 +172,7 @@ class Sensor:
 
         if self.__verbose: print("\nDETECÇÃO DE PICOS - START")
 
-        peaks, _ = signal.find_peaks(data, height=height)
+        peaks, _ = signal.find_peaks(data)
 
         if self.__verbose:
             print("\nDados:")
