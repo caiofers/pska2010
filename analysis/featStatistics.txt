@@ -1,0 +1,7 @@
+
+Total Statistics
+Acceptance Rate: 92.2%
+False Rejection Rate: 7.799999999999999%
+---------------------
+Rejection Rate: 93.46%
+False Acceptance Rate: 6.54%

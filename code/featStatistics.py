@@ -2,8 +2,8 @@ import wfdb
 import random
 import time
 
-from SensorTransmitter import SensorTransmitter
-from SensorReceiver import SensorReceiver
+from classes.SensorTransmitter import SensorTransmitter
+from classes.SensorReceiver import SensorReceiver
 
 def featStatistics():
     ARArray = []
@@ -11,7 +11,6 @@ def featStatistics():
     RRArray = []
     FARArray = []
     random.seed(time.time())
-
 
     for i in range(50):
         AR, FRR = testFRR(i+1, 100, 50)
@@ -43,7 +42,7 @@ def featStatistics():
     print("Rejection Rate: " + str((sum(RRArray)/len(RRArray))*100) + "%")
     print("False Acceptance Rate: " + str((sum(FARArray)/len(FARArray))*100) + "%")
 
-    archive = open('featStatistics.txt', 'w')
+    archive = open('analysis/featStatistics.txt', 'w')
     archive.write("\nTotal Statistics")
     archive.write("\nAcceptance Rate: " + str((sum(ARArray)/len(ARArray))*100) + "%")
     archive.write("\nFalse Rejection Rate: " + str((sum(FRRArray)/len(FRRArray))*100) + "%")
@@ -52,11 +51,9 @@ def featStatistics():
     archive.write("\nFalse Acceptance Rate: " + str((sum(FARArray)/len(FARArray))*100) + "%")
     archive.close()
 
-
 def testFRR(recordNum, iterations, sampleVariation):
     count = 0
     countFRR = 0
-    #recordNum = f"{recordNum:03d}"
     print(recordNum)
     for i in range(iterations):
         sampleFrom = random.randint(0, 800)
@@ -64,9 +61,6 @@ def testFRR(recordNum, iterations, sampleVariation):
         #recordTransmitter = wfdb.rdrecord('samples/patient'+recordNum+'/seg01', physical=False, sampfrom=0, channel_names=['V6-Raw'])
         recordReceiver = wfdb.rdrecord('samples/'+str(recordNum), physical=False, sampfrom=sampleFrom, channel_names=['avf'])
         #recordReceiver = wfdb.rdrecord('samples/patient'+recordNum+'/seg01', physical=False, sampfrom=0, channel_names=['V6-Raw'])
-        # print(recordReceiver.sig_name)
-        # print(recordReceiver.fs)
-        # print(len(recordReceiver.d_signal))
         
         if(PSKAPROTOCOL(recordTransmitter, recordReceiver)):
             count = count + 1
@@ -94,7 +88,6 @@ def testFAR(recordNum, iterations, sampleVariation):
             count = count + 1
     return count/iterations, countFAR/iterations
 
-
 def PSKAPROTOCOL(recordTransmitter, recordReceiver):
 
     # Definindo frequencia e quantidade de tempo para coleta das amostras
@@ -104,11 +97,11 @@ def PSKAPROTOCOL(recordTransmitter, recordReceiver):
     # Definindo ordem do polinômio
     order = 8
 
+    # Identificadores para o transmissor e receptor, respectivamente 
     IDt = 1
     IDr = 2
 
     sensorTransmitter = SensorTransmitter(frequency, seconds, order, IDt, IDr)
-    #sensorTransmitter.setPlot(True)
     sensorReceiver = SensorReceiver(frequency, seconds, order, IDr)
 
     sensorTransmitter.extractFeats(recordTransmitter)

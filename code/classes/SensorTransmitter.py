@@ -10,7 +10,7 @@ class SensorTransmitter(Sensor):
        self.__IDt = IDt
        self.__IDr = IDr
 
-
+    # Geração do cofre
     def generateVault(self):
         coeff = self.__generateCoeff() #Colocar para retornar bin e int
         
@@ -39,11 +39,11 @@ class SensorTransmitter(Sensor):
         for i in range(len(chaffPoly)):
             vault.append((chaffFeat[i],chaffPoly[i]))
         
-        print("Itens no cofre: " + str(len(vault)))
         self.__lockVault(vault)
         
         return self.__vaultLocked, key    
     
+    # Geração aleatória dos coeficientes para o polinômio
     def __generateCoeff(self):
         coeff = []
         random.seed(1)
@@ -51,6 +51,7 @@ class SensorTransmitter(Sensor):
             coeff.append(random.random())
         return coeff
 
+    # Geração dos pontos falsos
     def __generateChaffPoints(self, coeff, truePoly):
         i = 0
         chaffFeatVector = []
@@ -75,7 +76,6 @@ class SensorTransmitter(Sensor):
         # Lock/Permutação do cofre
         random.shuffle(vault)
         self.__vaultLocked = vault
-
 
     def createTransmitterMessage(self):
         message = {}

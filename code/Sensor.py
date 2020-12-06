@@ -11,6 +11,7 @@ import binascii
 
 class Sensor:
 
+    # Inicialização do sensor com número de bloco e ID
     def __init__(self, frequency, seconds, order):
         self.__frequency = frequency
         self.__seconds = seconds
@@ -36,31 +37,12 @@ class Sensor:
         # Pegando amostras dos dados 
         data = data[0:int(self.__frequency*self.__seconds)]
 
-        # Aplicando filtro nos dados
-        #data = self.__filter(data)
-
-        # Dividindo as amostras em 5 janelas de 125 amostras (1 janela para cada segundo) 
+        # Dividindo as amostras em janelas 
         division = self.__divideSamples(data)
 
         # Cálculo das características
         self._featsVector = self.__calcFeats(division)
         return self._featsVector
-
-    def __filter(self, data):
-        b, a = signal.butter(3, 0.05)
-        filtered = signal.filtfilt(b, a, data)
-        
-        if self.__verbose:
-            print("\nDados sem filtro: ")
-            print(data)
-            print("\nDados filtrados: ")
-            print(filtered)
-        
-        if self.__plot:
-            self.__plotPy('Sample', 'Signal', data)
-            self.__plotPy('Sample', 'Signal w/ Filter', filtered)
-        
-        return filtered
 
     def __plotPy(self, xlabel, ylabel, data):
         plt.title(xlabel + ' X ' + ylabel)
@@ -74,8 +56,11 @@ class Sensor:
     def __divideSamples(self, data):
         auxData = []
         division = []
+
         #Definindo numero de janelas
         numOfWindows = 8
+
+        #Dividindo as amostras em janelas de controlada 
         for i in range(numOfWindows):
             for j in range(int(len(data)/numOfWindows)):
                 auxData.append(data[(i + 1) * j])
@@ -103,6 +88,7 @@ class Sensor:
             peaks = self.__findPeaks(X, vMaxHeight, index)
             if len(peaks) == 0:
                 return featVectorInt
+
             # Definindo numero de bits da quantização
             nQuantBitsValue = 4
             nQuantBitsIndex = 4
@@ -118,7 +104,7 @@ class Sensor:
                 plt.show()
                 index = index + 1
 
-           # Construindo vetor de caracteristicas com cada ponto (Cada ponto resulta em 16 bits, sendo os 8 primeiros o indices e os outros 8 o valor)
+           # Construindo vetor de características com cada ponto (Cada ponto resulta em 16 bits, sendo os 8 primeiros o indices e os outros 8 o valor)
             for k in range(len(pt1)):
                 featVectorBin.append(np.binary_repr(pt1[k], width=4)+np.binary_repr(pt2[k], width=4))
                 featVectorInt.append(self.__convertBinToInt(featVectorBin[k]))
@@ -139,7 +125,7 @@ class Sensor:
         # Aplicando Fast Fourier Transform para 128 pontos
         X = fftpack.fft(data, n=nOfPoints)
 
-        #Coletando a metade dos pontos da FFT, já que os pontos tem caracteristica espelhada
+        # Coletando a metade dos pontos da FFT, já que os pontos tem característica espelhada
         X = X[0:64]
 
         if self.__verbose:
@@ -167,11 +153,10 @@ class Sensor:
             plt.show()
 
         return X
-    
+
+    # Encontrar os picos da FFT
     def __findPeaks(self, data, height, index=None):
-
         if self.__verbose: print("\nDETECÇÃO DE PICOS - START")
-
         peaks, _ = signal.find_peaks(data)
 
         if self.__verbose:
@@ -192,46 +177,6 @@ class Sensor:
             plt.show()
         return peaks
 
-    '''def __quantization(self, data, B, nbits = 32):
-        """
-        Requantiza sinal amostrado originalmente com nbits
-        no sinal y representado com B bits
-            input:
-                sinal: sinal original (assume-se media em torno de zero)
-                nbits: no. de bits da amostragem original
-                B: no. de bits da reamostragem
-            output:
-                y: sinal requantizado em B bits
-
-        Exemplo:
-        p = np.arange(-1,1,.1)
-        y0 = requantiza(p, 32, 1)
-        y1 = requantiza(p, 32, 2)
-        y2 = requantiza(p, 32, 4)
-        y3 = requantiza(p, 32, 8)
-
-        IS-25jan2017
-        """
-        if B >= nbits: # nada a fazer
-            y = data
-            return y
-
-        M = 2**(nbits-1)
-        Q = 2**(B-1)
-        if max(data) - min(data) < 2: # sinal normalizado
-            sinal2 = data * M
-            if max(sinal2) > M:
-                print('Checar sinal')
-                return []
-
-            sinal2 = np.floor(sinal2)
-            y = np.floor(sinal2/M*Q)
-            y = y/Q
-            return y
-        else:
-            return []
-
-    '''
     def __quantization(self, data, nQuantBits):
         if self.__verbose: print("\nQUANTIZAÇÃO - INÍCIO")
 
@@ -267,6 +212,7 @@ class Sensor:
         
         return quantized_coeffs
     
+    # Converter binário para inteiro
     def __convertBinToInt(self, n):
         decimal = 0
         n = str(n)

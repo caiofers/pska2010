@@ -2,8 +2,8 @@ import wfdb
 import statistics
 import tracemalloc
 
-from SensorTransmitter import SensorTransmitter
-from SensorReceiver import SensorReceiver
+from classes.SensorTransmitter import SensorTransmitter
+from classes.SensorReceiver import SensorReceiver
 
 def memoryPeakStatistics():
     memoryPeakExtractFeatTransmitterArray = []
@@ -68,7 +68,7 @@ def memoryPeakStatistics():
     print("Variance: " + str(statistics.pvariance(totalMemoryPeakReceiverArray)))
 
 
-    archive = open('memoryStatistics.txt', 'w')
+    archive = open('analysis/memoryStatistics.txt', 'w')
 
     archive.write("\nTotal statistics")
 
@@ -114,18 +114,18 @@ def PSKAPROTOCOLTIME(recordTransmitter, recordReceiver):
     # Definindo ordem do polinômio
     order = 8
 
+    # Identificadores para o transmissor e receptor, respectivamente 
     IDt = 1
     IDr = 2
 
-    # Definindo variáveis para coletar tempo
+    # Definindo variáveis para coletar memória
     memoryPeakExtractFeatTransmitter = 0
     memoryPeakExtractFeatReceiver = 0
     memoryPeakGenerateLockVault = 0
     memoryPeakUnlockVault = 0
 
-
+    # Coleta dos picos de memória de cada etapa
     sensorTransmitter = SensorTransmitter(frequency, seconds, order, IDt, IDr)
-    #sensorTransmitter.setPlot(True)
     sensorReceiver = SensorReceiver(frequency, seconds, order, IDr)
 
     tracemalloc.start()
@@ -134,14 +134,12 @@ def PSKAPROTOCOLTIME(recordTransmitter, recordReceiver):
     tracemalloc.stop()
     memoryPeakExtractFeatTransmitter = peak
 
-
     tracemalloc.start()
     sensorReceiver.extractFeats(recordReceiver)
     current, peak = tracemalloc.get_traced_memory()
     tracemalloc.stop()
     memoryPeakExtractFeatReceiver = peak
     
-
     tracemalloc.start()
     sensorTransmitter.generateVault()
     message = sensorTransmitter.createTransmitterMessage()
@@ -149,8 +147,6 @@ def PSKAPROTOCOLTIME(recordTransmitter, recordReceiver):
     tracemalloc.stop()
     memoryPeakGenerateLockVault = peak
 
-    
-    
     tracemalloc.start()
     sensorReceiver.receiveTransmitterMessage(message)
     sensorReceiver.unlockVault()
@@ -162,8 +158,6 @@ def PSKAPROTOCOLTIME(recordTransmitter, recordReceiver):
     
     sensorTransmitter.receiveAckMessage(message)
     
-    
     return memoryPeakExtractFeatTransmitter, memoryPeakExtractFeatReceiver, memoryPeakGenerateLockVault, memoryPeakUnlockVault
-
 
 memoryPeakStatistics()
