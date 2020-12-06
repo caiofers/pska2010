@@ -4,7 +4,7 @@ Total statistics
 Memory Peak to Extract Features on Transmitter
 Mean: 219,19
 Standard Deviation: 1,26
-Variance: 1,58
+Variance: 1,59
 
 Memory Peak to Extract Features on Receiver
 Mean: 219,19
@@ -18,15 +18,15 @@ Variance: 4,3
 
 Memory Peak to unlock vault on Receiver
 Mean: 13,12
-Standard Deviation: 1,31
-Variance: 1,71
+Standard Deviation: 1,32
+Variance: 1,75
 
 Total Memory Peak Transmitter
 Mean: 239,24
 Standard Deviation: 3,32
-Variance: 11,01
+Variance: 11,03
 
 Total Memory Peak Receiver
-Mean: 232,32
-Standard Deviation: 2,56
-Variance: 6,55
+Mean: 232,31
+Standard Deviation: 2,57
+Variance: 6,63

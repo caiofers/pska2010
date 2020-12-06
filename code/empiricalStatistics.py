@@ -13,8 +13,6 @@ def timeStatistics():
     timeUnlockVaultArray = []
     totalTimeTransmitterArray = []
     totalTimeReceiverArray = []
-    memoryPeakArray = []
-
 
     for i in range(50):
         recordTransmitter = wfdb.rdrecord('samples/'+str(i+1), physical=False, sampfrom=0, channel_names=['avf'])
